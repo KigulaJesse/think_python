@@ -14,11 +14,13 @@ def verify(index):
     Verifies what's found
     """
     if index is not None:
-        print(f"Target found at index {index}")
+        print(f"Target found at index: {index}")
     else:
         print("Target not found in list")
 
 numbers = [x for x in range(1,11)]
 print(numbers)
 result = linear_search(numbers, 12)
+verify(result)
+result = linear_search(numbers, 6)
 verify(result)
