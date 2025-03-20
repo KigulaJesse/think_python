@@ -1,48 +1,47 @@
-"Bubble Sort Exercises from ChatGPT"
+"Bubble Sort in all forms"
 
-def basic_bubblesort(array):
-    "This Bubble Sort Function organises array in Ascending Order"
+def bubble_right_descending(array):
+    "Bubbles to the right arranges in descending order using range"
     size = len(array)
-    # print(range(size-1))
-    for i,_ in enumerate(array[:size:]):
-        for j,_ in enumerate(array[:size-i-1:]):
-            print(array[:size-i:])
-            print(j)
-            print(j + 1)
-            print("")
+    for i in range(size-1):
+        for j in range(size-i-1):
+            if array[j] < array[j+1]:
+                array[j], array[j+1] = array[j+1],array[j]
+    return array
+test_array = [5, 3, 8, 4, 2]
+print("Bubble Right Descending: ",bubble_right_descending(test_array))
+
+def bubble_right_ascending(array):
+    "Bubbles to the right arranges in ascending order using range"
+    size = len(array)
+    for i in range(size-1):
+        for j in range(size-i-1):
             if array[j] > array[j+1]:
-                array[j],array[j+1] = array[j+1],array[j]
+                array[j],array[j+1] =  array[j+1],array[j]
+    return array
+test_array = [5, 3, 8, 4, 2]
+print("Bubble Right Ascending: ",bubble_right_ascending(test_array))
+
+def bubble_left_descending(array):
+    "Bubbles to the left arranges in descending order using range"
+    size = len(array)
+    for i in range(size-1):
+        for j in range(size-1, i,-1):
+            if array[j] > array[j-1]:
+                array[j],array[j-1] =  array[j-1],array[j]
     return array
 
 test_array = [5, 3, 8, 4, 2]
-print(basic_bubblesort(test_array))
+print("Bubble Left Descending: ", bubble_left_descending(test_array))
 
-# def descending_bubble(array):
-#     "This is descending order Bubble Sort"
-#     size = len(array)
-#     for i in range(size-1):
-#         for j in range(size-i-1):
-#             if array[j] < array[j+1]:
-#                 array[j],array[j+1] = array[j+1],array[j]
-#     return array
+def bubble_left_ascending(array):
+    "Bubbles to the left arranges in ascending order using range"
+    size = len(array)
+    for i in range(size-1):
+        for j in range(size-1, i, -1):
+            if array[j] < array[j-1]:
+                array[j],array[j-1] =  array[j-1],array[j]
+    return array
 
-# # test_array = [5, 3, 8, 4, 2]
-# # print(descending_bubble(test_array))
-
-# def descending_bubble_alternate(array):
-#     "This is descending order Bubble Sort"
-#     size = len(array)
-#     for i in range(size-1):
-#         print(i)
-#         print(array[:i:])
-#         print(array[i::])
-#         print("")
-#         # for j in array[:i:-1]:
-#         #     # print(j)
-#         #     print(i)
-#         #     print(array[:i:-1])
-#         # print("")   
-#     return array
-
-# test_array = [5, 3, 8, 4, 2]
-# print(descending_bubble_alternate(test_array))
+test_array = [5, 3, 8, 4, 2]
+print("Bubble Left Ascending:",bubble_left_ascending(test_array))
