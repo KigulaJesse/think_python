@@ -70,7 +70,7 @@ def optimized_bubble(array):
                 swapped = True
                 swaps += 1
                 array[j], array[j-1] =  array[j-1], array[j]
-        if not swapped:
+        if not swapped: 
             "Since there are no swaps, list is sorted no need to continue"
             break
     return array,swaps
